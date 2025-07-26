@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawseef Ahmad - Contact Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for animations and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevents horizontal scroll from animations */
+            background-color: #f8fafc; /* Light grey background */
+            color: #1e293b; /* Dark text color */
+        }
+
+        /* Specific animation classes for fade-in-up effect */
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* State for when element is visible */
+        .animate-fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu specific styles */
+        #mobile-menu.hidden {
+            display: none;
+        }
+        #mobile-menu.block {
+            display: block;
+        }
+
+        /* Specific style for success message */
+        .success-message {
+            display: none; /* Hidden by default */
+        }
+        .success-message.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-200 selection:text-blue-800">
+
+    <header class="fixed top-0 w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">
+                    Tawseef Ahmad
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-200 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition duration-200 font-medium">About</a>
+                    <a href="skills.html" class="text-gray-700 hover:text-blue-600 transition duration-200 font-medium">Skills</a>
+                    <a href="projects.html" class="text-gray-700 hover:text-blue-600 transition duration-200 font-medium">Projects</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition duration-200 font-medium">Blog</a>
+                    <a href="contact.html" class="text-blue-600 font-bold">Contact</a> </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-200 transition duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg py-2">
+                <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white rounded-md transition duration-200">Home</a>
+                <a href="about.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white rounded-md transition duration-200">About</a>
+                <a href="skills.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white rounded-md transition duration-200">Skills</a>
+                <a href="projects.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white rounded-md transition duration-200">Projects</a>
+                <a href="blog.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white rounded-md transition duration-200">Blog</a>
+                <a href="contact.html" class="block px-4 py-2 text-blue-600 font-bold hover:bg-blue-500 hover:text-white rounded-md transition duration-200">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24"> <section id="contact-hero" class="py-24 bg-gradient-to-br from-indigo-50 to-blue-100 px-4 text-center">
+            <div class="container mx-auto max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 animate-fade-in-up">
+                    Get in Touch with Tawseef
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate-fade-in-up" data-delay="100">
+                    Whether you have a project idea, a question, or just want to say hello, I'd love to hear from you.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact-details" class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <div class="animate-fade-in-up" data-delay="100">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center md:text-left">Send Me a Message</h2>
+                    <form id="contactForm" class="space-y-6 bg-gray-50 p-8 rounded-lg shadow-xl" data-formspree="https://formspree.io/f/xeozgpqd" method="POST">
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-gray-800 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Tawseef Ahmad"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-gray-800 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="twhdrather@gmail.com"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-lg font-medium text-gray-800 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Collaboration Idea"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-lg font-medium text-gray-800 mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell me more about your project or idea..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-800" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+
+                    <p id="successMessage" class="success-message mt-6 p-4 bg-green-100 text-green-700 border border-green-300 rounded-md text-center font-medium">
+                        Your message has been sent successfully! I will get back to you soon.
+                    </p>
+                    <p id="errorMessage" class="success-message mt-6 p-4 bg-red-100 text-red-700 border border-red-300 rounded-md text-center font-medium">
+                        There was an error sending your message. Please try again later.
+                    </p>
+                </div>
+
+                <div class="animate-fade-in-up" data-delay="200">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center md:text-left">My Details</h2>
+
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-xl space-y-6 mb-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Email</h3>
+                            <p class="text-lg text-gray-700">
+                                <a href="mailto:twhdrather@gmail.com" class="text-blue-600 hover:underline">twhdrather@gmail.com</a>
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Phone</h3>
+                            <p class="text-lg text-gray-700">
+                                <a href="tel:+919596799612" class="text-blue-600 hover:underline">+91 9596799612</a>
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Address</h3>
+                            <p class="text-lg text-gray-700">
+                                Doonigund, Tral, Pulwama, Jammu and Kashmir, India
+                            </p>
+                            <p class="text-sm text-gray-500 mt-2">
+                                (Please contact me for precise directions if visiting)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="animate-fade-in-up" data-delay="300">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center md:text-left">Connect with Me</h3>
+                        <div class="flex justify-center md:justify-start space-x-6">
+                            <a href="https://linkedin.com/in/tawseefahmad" target="_blank" aria-label="LinkedIn" class="text-gray-600 hover:text-blue-700 transform hover:scale-110 transition duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.367-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+                            </a>
+                            <a href="https://github.com/tawseefahmad" target="_blank" aria-label="GitHub" class="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.492.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1-.322 3.315 1.234 1-.277 2.075-.416 3.15-.416.077 0 .153.003.23.006 1.075.002 2.15.141 3.15.416 2.315-1.556 3.315-1.234 3.315-1.234.653 1.653.242 2.873.118 3.176.766.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.765-1.589 8.201-6.085 8.201-11.387c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
+                            </a>
+                            <a href="https://dribbble.com/tawseefahmad" target="_blank" aria-label="Dribbble" class="text-gray-600 hover:text-pink-600 transform hover:scale-110 transition duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12s-5.373-12-12-12zm7.135 15.341c-.267.859-1.921 1.755-3.693 1.839-1.002.046-2.597-.333-2.66-2.678-.063-2.345.029-4.832 2.648-5.309.917-.168 1.996.113 2.723.633.364.26.74.807.954 1.403.214.596.183 1.298-.073 1.933-.256.635-.748 1.146-1.325 1.48-.577.335-1.168.497-1.634.428-.465-.069-.838-.288-.93-.45-.092-.162-.05-.276.096-.341.146-.066.398-.106.577-.101.179.005.342-.016.49-.07.147-.054.265-.137.35-.239.085-.102.162-.224.23-.357.069-.133.125-.27.168-.41.043-.141.063-.289.06-.445-.003-.156-.03-.306-.082-.45-.052-.144-.122-.276-.21-.396-.088-.12-.19-.22-.303-.3-.113-.08-.238-.135-.37-.166-.131-.03-.27-.038-.412-.023-.142.015-.28.056-.41.121-.13.064-.247.151-.35.26-.103.108-.192.234-.265.374-.073.14-.13.297-.17.46-.039.163-.06.331-.06.5.001.169.023.336.068.498.045.162.106.315.18.455.074.14.16.265.258.375.098.11.206.205.32.285.114.08.23.137.348.175.118.038.23.058.336.058.106.001.204-.017.294-.053.089-.036.17-.089.24-.16.07-.07.13-.158.17-.26.04-.102.06-.21.06-.324 0-.11-.02-.218-.06-.324-.04-.106-.1-.205-.18-.297-.08-.092-.17-.174-.27-.245-.1-.07-.21-.128-.327-.172-.117-.044-.24-.072-.367-.084-.127-.012-.255-.008-.38-.01-.125-.002-.248-.014-.367-.036-.118-.022-.227-.058-.327-.11-.1-.052-.187-.123-.26-.213-.073-.09-.129-.196-.168-.31-.039-.114-.058-.236-.058-.367 0-.131.02-.257.06-.376.04-.119.098-.23.175-.33.077-.1.168-.19.273-.265.105-.075.22-.134.34-.176.12-.04.24-.06.363-.058.123-.001.242.02.355.06.113.04.215.106.3.197.085.09.155.197.21.32.055.123.085.253.085.39 0 .139-.02.27-.06.392-.04.122-.098.236-.175.34-.077.104-.168.197-.273.277-.105.08-.22.14-.34.18-.12.04-.24.06-.363.058-.093-.002-.18-.016-.26-.041-.08-.024-.15-.059-.21-.106-.06-.047-.11-.106-.14-.177-.03-.07-.04-.148-.04-.236 0-.088.01-.17.03-.245.02-.075.05-.145.09-.21.04-.065.08-.12.13-.165.05-.045.1-.077.15-.096.05-.02.1-.029.15-.029.05 0 .098.006.14.017.043.012.083.029.117.051.034.022.064.049.088.08.024.031.04.066.048.106.008.04.01.082.006.125-.004.043-.01.086-.017.127-.008.042-.014.085-.017.127-.003.042-.002.083.003.125.005.042.012.083.022.122.01.04.02.078.03.115.01.037.017.073.02.106.003.033.002.063-.003.09-.005.027-.013.05-.024.069-.011.019-.026.033-.045.042-.019.009-.04.012-.062.008-.022-.004-.04-.014-.055-.029-.015-.015-.024-.035-.027-.058-.003-.023-.001-.047.006-.07.007-.023.018-.044.032-.06.015-.016.033-.027.054-.034.02-.007.042-.008.064-.002.022.006.042.018.057.036.015.017.025.039.03.064.005.025.005.051.002.075-.003.024-.01.047-.02.067-.01.02-.023.038-.039.051-.016.014-.035.023-.056.027-.021.004-.043.004-.064.001-.021-.003-.04-.01-.057-.02-.017-.01-.03-.023-.04-.038-.01-.015-.016-.03-.016-.046-.001-.016.003-.03.01-.042.007-.012.017-.02.03-.025.013-.005.027-.006.04-.002.013.004.025.013.035.026.01.013.017.029.02.046.003.017.002.035-.003.052-.005.017-.012.033-.022.047-.01.014-.022.026-.036.035-.014.009-.03.015-.047.017-.017.002-.034.001-.05-.005-.016-.006-.03-.016-.042-.03-.012-.014-.022-.03-.028-.048-.006-.018-.008-.037-.006-.056.002-.019.008-.038.017-.055.009-.017.02-.032.033-.045.013-.013.027-.023.04-.029.013-.006.027-.008.04-.005.013.003.026.01.037.02.011.01.02.023.026.038.006.015.008.03.006.046-.002.016-.008.03-.017.042-.009.012-.02.02-.033.025-.013.005-.027.006-.04-.002z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+        <section class="py-16 px-4 bg-blue-600 text-white text-center animate-fade-in-up">
+            <div class="container mx-auto max-w-2xl">
+                <h2 class="text-3xl font-bold mb-4">Ready to Create Something Amazing Together?</h2>
+                <p class="text-lg mb-8">
+                    Let's connect and discuss how my expertise can bring your next project to life.
+                </p>
+                <a href="contact.html" class="inline-block bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Let's Work Together
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10 px-4">
+        <div class="container mx-auto text-center text-sm">
+            <p>© 2025 Tawseef Ahmad. All rights reserved.</p>
+            <div class="mt-4 flex flex-wrap justify-center space-x-4 md:space-x-6">
+                <a href="index.html" class="hover:text-white transition duration-200">Home</a>
+                <a href="about.html" class="hover:text-white transition duration-200">About</a>
+                <a href="skills.html" class="hover:text-white transition duration-200">Skills</a>
+                <a href="projects.html" class="hover:text-white transition duration-200">Projects</a>
+                <a href="blog.html" class="hover:text-white transition duration-200">Blog</a>
+                <a href="contact.html" class="hover:text-white transition duration-200">Contact</a>
+            </div>
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="https://linkedin.com/in/tawseefahmad" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.367-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="https://github.com/tawseefahmad" target="_blank" aria-label="GitHub" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.492.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1-.322 3.315 1.234 1-.277 2.075-.416 3.15-.416.077 0 .153.003.23.006 1.075.002 2.15.141 3.15.416 2.315-1.556 3.315-1.234 3.315-1.234.653 1.653.242 2.873.118 3.176.766.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.765-1.589 8.201-6.085 8.201-11.387c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="https://dribbble.com/tawseefahmad" target="_blank" aria-label="Dribbble" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12s-5.373-12-12-12zm7.135 15.341c-.267.859-1.921 1.755-3.693 1.839-1.002.046-2.597-.333-2.66-2.678-.063-2.345.029-4.832 2.648-5.309.917-.168 1.996.113 2.723.633.364.26.74.807.954 1.403.214.596.183 1.298-.073 1.933-.256.635-.748 1.146-1.325 1.48-.577.335-1.168.497-1.634.428-.465-.069-.838-.288-.93-.45-.092-.162-.05-.276.096-.341.146-.066.398-.106.577-.101.179.005.342-.016.49-.07.147-.054.265-.137.35-.239.085-.102.162-.224.23-.357.069-.133.125-.27.168-.41.043-.141.063-.289.06-.445-.003-.156-.03-.306-.082-.45-.052-.144-.122-.276-.21-.396-.088-.12-.19-.22-.303-.3-.113-.08-.238-.135-.37-.166-.131-.03-.27-.038-.412-.023-.142.015-.28.056-.41.121-.13.064-.247.151-.35.26-.103.108-.192.234-.265.374-.073.14-.13.297-.17.46-.039.163-.06.331-.06.5.001.169.023.336.068.498.045.162.106.315.18.455.074.14.16.265.258.375.098.11.206.205.32.285.114.08.23.137.348.175.118.038.23.058.336.058.106.001.204-.017.294-.053.089-.036.17-.089.24-.16.07-.07.13-.158.17-.26.04-.102.06-.21.06-.324 0-.11-.02-.218-.06-.324-.04-.106-.1-.205-.18-.297-.08-.092-.17-.174-.27-.245-.1-.07-.21-.128-.327-.172-.117-.044-.24-.072-.367-.084-.127-.012-.255-.008-.38-.01-.125-.002-.248-.014-.367-.036-.118-.022-.227-.058-.327-.11-.1-.052-.187-.123-.26-.213-.073-.09-.129-.196-.168-.31-.039-.114-.058-.236-.058-.367 0-.131.02-.257.06-.376.04-.119.098-.23.175-.33.077-.1.168-.19.273-.265.105-.075.22-.134.34-.176.12-.04.24-.06.363-.058.123-.001.242.02.355.06.113.04.215.106.3.197.085.09.155.197.21.32.055.123.085.253.085.39 0 .139-.02.27-.06.392-.04.122-.098.236-.175.34-.077.104-.168.197-.273.277-.105.08-.22.14-.34.18-.12.04-.24.06-.363.058-.093-.002-.18-.016-.26-.041-.08-.024-.15-.059-.21-.106-.06-.047-.11-.106-.14-.177-.03-.07-.04-.148-.04-.236 0-.088.01-.17.03-.245.02-.075.05-.145.09-.21.04-.065.08-.12.13-.165.05-.045.1-.077.15-.096.05-.02.1-.029.15-.029.05 0 .098.006.14.017.043.012.083.029.117.051.034.022.064.049.088.08.024.031.04.066.048.106.008.04.01.082.006.125-.004.043-.01.086-.017.127-.008.042-.014.085-.017.127-.003.042-.002.083.003.125.005.042.012.083.022.122.01.04.02.078.03.115.01.037.017.073.02.106.003.033.002.063-.003.09-.005.027-.013.05-.024.069-.011.019-.026.033-.045.042-.019.009-.04.012-.062.008-.022-.004-.04-.014-.055-.029-.015-.015-.024-.035-.027-.058-.003-.023-.001-.047.006-.07.007-.023.018-.044.032-.06.015-.016.033-.027.054-.034.02-.007.042-.008.064-.002.022.006.042.018.057.036.015.017.025.039.03.064.005.025.005.051.002.075-.003.024-.01.047-.02.067-.01.02-.023.038-.039.051-.016.014-.035.023-.056.027-.021.004-.043.004-.064.001-.021-.003-.04-.01-.057-.02-.017-.01-.03-.023-.04-.038-.01-.015-.016-.03-.016-.046-.001-.016.003-.03.01-.042.007-.012.017-.02.03-.025.013-.005.027-.006.04-.002.013.004.025.013.035.026.01.013.017.029.02.046.003.017.002.035-.003.052-.005.017-.012.033-.022.047-.01.014-.022.026-.036.035-.014.009-.03.015-.047.017-.017.002-.034.001-.05-.005-.016-.006-.03-.016-.042-.03-.012-.014-.022-.03-.028-.048-.006-.018-.008-.037-.006-.056.002-.019.008-.038.017-.055.009-.017.02-.032.033-.045.013-.013.027-.023.04-.029.013-.006.027-.008.04-.005.013.003.026.01.037.02.011.01.02.023.026.038.006.015.008.03.006.046-.002.016-.008.03-.017.042-.009.012-.02.02-.033.025-.013.005-.027.006-.04-.002z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://formspree.io/js/formspree.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu Toggle Functionality ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('block');
+                });
+            }
+
+            // --- Scroll-Triggered Fade-In-Up Animation ---
+            const animateElements = document.querySelectorAll('.animate-fade-in-up');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = parseInt(entry.target.dataset.delay) || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, delay);
+                        // Optional: Keep observer active to re-trigger if element scrolls out and back in
+                        // observer.unobserve(entry.target); // Uncomment this line if you want the animation to play only once
+                    } else {
+                        // Optional: remove is-visible when not intersecting to allow re-triggering on scroll back
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of the element is visible
+                rootMargin: '0px 0px -50px 0px' // Start loading slightly before reaching the bottom
+            });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // --- Formspree AJAX Handling ---
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage'); // Get the error message element
+
+            if (form) {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Prevent default form submission (which causes redirection)
+
+                    // Hide any previous messages
+                    successMessage.classList.remove('visible');
+                    errorMessage.classList.remove('visible');
+
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.dataset.formspree, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json' // Essential for Formspree to return JSON
+                            }
+                        });
+
+                        if (response.ok) {
+                            successMessage.classList.add('visible');
+                            form.reset(); // Clear the form fields
+                        } else {
+                            // Handle errors, e.g., show an error message
+                            errorMessage.classList.add('visible');
+                            console.error('Form submission failed:', response.statusText);
+                            const errorData = await response.json();
+                            console.error('Formspree error details:', errorData);
+                        }
+                    } catch (error) {
+                        errorMessage.classList.add('visible');
+                        console.error('Network or fetch error:', error);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
